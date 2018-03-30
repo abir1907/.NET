@@ -1,0 +1,275 @@
+ASP.NET controls:
+
+A) Standard controls
+	1) Intrinsic controls
+	2) Rich Controls: Adrotator, calender Controls
+B) Data controls
+C) Validation
+
+
+Checkboxlist: DataBaseID
+IsPostBack is a property of Page class.
+Page is a super class of ASP.NET
+
+Multiview: collection of different views
+
+
+Validation summary
+
+event bubbling- whenever you add your own control within data control, when you click your own control but fires the event of the data control
+
+Types of ASP.NET objects:
+1. Request: Whenever client sends a request to the server
+2. Response: object of Page class. Whenever server generates a PostBack to the client
+3. Session: object that can access the data between page call
+4. Application: object that can access the data in whole application
+5. Server: We can access the resources of the server
+
+SMS:
+1. Clients side
+i) viewstate: we can access the data within page. Type is hidden, storage type collections.data store is encrypted format.
+ii) HiddenField: We can access the data within page. Storage type single value. Data does not store encrypted format.
+iii) Cross page posting: We can access the data one page to another only control value.
+iv) Querystring: we can access the data one page to another using URL.
+v) Cookies: We can access the data one page to any page. default time 30 days. max data 4kb.
+
+Response.Redirect: redirect to another page follow the round trip, URL changed
+Server.Transfer: directly redirect to another page, does not follow round trip, URL unchanged
+
+ADO.NET
+DataAdapter methods -Fill,FillSchema
+Dataset is an object that can be used to retrieve the data from database 
+Dataset just like RDBMS
+Data is stored in XML format in Dataset
+Dataset is collection of datatable and datatable is a collection of datarow and datacolumn.
+
+Datarelation is an object 
+Dataview is an object that can be used to filtering and sorting the data
+constraint cannot be copied.
+
+CommandBuilder: provides the permission to the adapter to fetch the data from disconnected mode and update in connected mode
+
+
+
+
+Data Controls: We can dynamic bind the data in data controls
+DOTNET 1.1:
+1) Repeater Controls: Repeater Control is a container but repeater control does not have any format. 
+How to create the format of repeater control: using different template we can create.
+2) DataList: Same as repeater
+Difference: repeater control is a read only control but we can edit the data in datalist.
+3) DataGrid: it has its own format. we can edit the data in datagrid.
+
+DOTNET 2.0:
+1) GridView
+2) FormView
+3) DetailView
+
+DOTNET 3.5:
+1) ListView
+2) DataPager
+
+
+How to bind data in detailView?
+Difference between eval and bind?
+eval - single way binding
+bind - two way binding
+
+
+---------------------------------------
+
+form tag method- 'Get' by default
+Difference between Get and Post: In Get, data show in URL, In Post data not shown. Get is not secured. Post is secured. Limited data transfer using Get.
+Maximum data transfer using post.
+file upload control: inside form tag, write: enctype="multipart/form-data"
+view type: hidden
+-----------------------------------
+In DataReader, data stored in binary format.
+In DataSet, data stored in XML format.
+
+How to execute procedure in front end?
+using System.Data;
+cmd=new SqlCommand("procedure_name",con);
+cmd.CommandType=CommandType.StoredProcedure;
+
+OR
+
+cmd=new SqlCommand("exec procedure_name '"+TextBox1.Text+"'",con);
+-----------------------------------
+Configuration file:
+data stored in XML format.
+1. Machine.config
+2. Web.config
+We can use more than web.config in one project with the help of directory.
+
+How to put connection in web.config?
+<configuration>
+	<connectionStrings>
+		<add name="constr" connectionStrings="<servername>; database=crm;integrated security=true" providerName="System.Data.SqlClient" />
+	</connectionStrings>
+</configuration>
+
+SqlConnection con=new SqlConnection(ConfigurationManager.ConnectionStrings["constr"].ToString());
+
+
+aspx page- Inline code
+cs page- code behind code
+
+-----------------------------------------------------
+1. connection string in web.config
+2. DAL- add class file
+App_Data- database
+App_code- cs file
+--------------------------------
+Webuser control- access within website. extension- .ascx (Active Server Control)
+custom control- access multiple website. extension- .dll
+We have to reduce lot of coding and designing by using webuser control and custom control
+
+How to call webuser control?
+by using Register directive(<%@ Register%>)
+<TagPrefix:Tagname
+------------------------
+
+Webservice are the business logic component that provides the functionality by the internet
+extension- .asmx
+SOA - Service Oriented Architecture
+
+webservice consumes in various way: 
+1) http get: whenever URL get the method 
+2) http post: whenever server generates postback to the client
+3) soap: lightweight protocol used for transferring the data in a platform independent way. access to services, server and object
+4) wsdl:Web Service Description Language. If you want to see the metadata, type , description 
+
+System.Web.Services- namespace
+WebService- class
+
+disco file
+
+----------------------------------------------------------------------------------------
+AJAX is a combination of Asynchronous JS and XML. Technique for creating better, faster and more attractive web application. it stops the whole page refreshment for each postback. XMLHttpRequest object trades data with web application
+
+
+We can use only one scriptManager within one webpage but updatePanel more than one.
+
+----------------------------------
+Master Page
+Overall layer of application that can be stored in master page.
+.master is the extension
+By default two placeholders
+
+How to call a masterpage in your page?
+
+In web.config 
+<system.web>
+	<pages masterPageFile="<name>" />
+</system.web>
+--------------------------------
+Navigation control:
+treeview
+Menu
+Sitemap: SiteMap path.... open Web.sitemap
+--------------------------------------------------------------------
+Themes
+.css- design time, applied for any control
+.skin- runtime,applied for server control
+1. default skin- no skin id, by default applies for same control
+2. Named skin- has skin id.
+
+--------------------------------------------------------------------
+How to pick querystring?
+request.querystring
+---------------------------
+How to install IIS Server?
+control panel -> Programs and features -> turn windows feature on and off -> c:\inetpub\wwwroot
+
+How to configure IIS in VS?
+VS Command Prompt -> run as administrator -> aspnet_regiis -i
+
+Before deployment website in IIS server, first you have to publish
+whenever you upload a website to the server, create a virtual directory
+
+inetmgr - shortcut for IIS
+
+-------------------------------
+<Configuration>
+	<system.net>
+		<mailSettings>
+			<smtp>
+				
+			</smtp>
+		</mailSettings>
+	</system.net>
+</configuration>
+
+
+namespace: using System.Net.Mail
+MailMessage mm=new MailMessage()
+mm.Attachment.Add(new Attachment(FileUpload1.PostedFile.InputStream,""))
+SmtpClient sc=new SmtpClient();
+sc.EnablesSsl=true;
+sc.Send(ms);
+--------------------------
+
+LINQ- Unified programming model to access any kind of data.
+LINQ with object
+LINQ with database
+LINQ with XML
+LINQ with Dataset
+
+System.Data.LINQ
+
+--------------------
+Global.asax- all the global application label event stored in the global.asax. within a project we can use one global.asax
+
+Session mode- Proc, InProc, state server/ outproc, database,custom
+
+-------------------
+
+Entity Framework
+Open source framework
+ORM- object relational mapping
+three approaches- code first, database first, model first
+
+namespace - System.Data.Entity
+
+edmx - entity framework extension
+
+table denotes class
+column denotes property
+stored procedure denotes function
+
+Code first approach: Business layer first
+
+-------------------
+MVC:
+it is an architecture pattern. 
+No code behind, No viewstate
+
+Razor engine extension - .cshtml
+@ in Razor engine
+<% in aspx engine
+
+namespace for mvc- system.web.Mvc;
+
+-----------------
+
+Security in web.config
+diff between 
+
+Authentication: We have to define the number of users 
+Authorization: is the process where we check does this identity have access right to the system.
+
+Type of Authentication mode in web.config:
+1. Form: used for internet application
+2. Windows: used for intranet application
+3. Passport: if you want to provide a higher security. For this we have to download the passport development kit from MS website and install in computer
+4. None
+
+By default which type of Authentication mode used in web.config? -> Windows
+
+--------------------
+
+Connectivity with LINQ
+
+.dbml is the extension od LINQ with database
+to connect with database click on server explorer
