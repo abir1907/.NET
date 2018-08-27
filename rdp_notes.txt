@@ -1,0 +1,90 @@
+ALL
+--------
+Which of the following is TRUE about entity set
+which is/are a/the console commands in nuget from the following?
+What are the different types of development approaches in EF?
+What are the benifits of POCO?
+Which of the following are the three parts of ENtity Framework ?
+Which of the following statements are TRUE?(MULTIPLE ANS) I.edmx file is an XML.file
+which of the following is true about overlapping keys?
+Which of the following mapping is supported by Fluent Api?
+choose handle error attribute globaly
+Which of the following is a way to install/download a Nuget in your system?
+Which of the following methods make entity framework fro detecting changes automatically?
+Which of the following option is correct about Navigation Property
+ObjectContext mainly used for which of the following ?
+which of the following loading is supported by Entity framework?
+where can CLR functions be used
+In Model We can keep Which of the following
+What are Entity state members
+The controller class is responsible for the following processing stages:
+Whenever a user searches for a product on the web page
+Which of the following is TRUE about entity set
+which is/are a/the console commands in nuget from the following?
+which of the following is true about overlapping keys?
+
+FALSE
+--------
+IOC stands for inversion of constraint
+in TDD, we develop the code first which is then followed by testing
+In a Entity Framework application, mapping metadata is not loaded from an.msl file.
+Conceptual model properties are not same as the properties created in .edmx file
+dependencyresolver() is destructor?
+Machine.config,contains settings that apply to an entire Network
+
+BOTH
+--------
+TDD code should be
+What does a cache profile do?
+Which of the following require type-casting in the view?
+analyse the link:- "http://localhost/music/".
+What does LINQ to SQL do:
+
+NOTES
+---------
+MSL - Mapping Specification Language
+IIS - Internet Information Services
+SSDL - Store Schema Definition Language
+CSDL - Conceptual Schema Definition Language
+which of the following class object is used for manipulatiing entity and trigger the changes while insert,delete and update on the entity? - DBContext
+Which of the following object is used to query and modify data? - ObjectContext
+Views are used to control placement of_______. - object
+The_________ class provides facilites for querying and - objectcontext
+
+--------
+Keyword
+
+});});
+DatabaseGeneratedOption
+Compare
+Sample_one
+actionName
+”value=”System.Data.Entity
+Roles="Admin"
+loose coupling 
+db.Friends.Include
+Advice him to use partial views
+ctx.students.sqlquery
+if(Request.IsAuthenticated)
+nonclustered, reorganizing different
+MapToStoredProcedure
+ACt HO
+--------
+-ve
+
+DataCompression
+less error prone
+calling and called object different
+AfterLoad function of JavaScript use
+It can be used to store large image types.
+field level principle
+Execute method is to create a new delegate to represent the compiled query.
+Linq to objects
+they are inherited from another user defined stored procedure
+SQL server keeps the stored procedures & triggers in compiled form for future execution
+Database file name shouuld not be more than 8 characters
+the selected rows.
+ability to access SQL server using TCP/IP
+Do not use javascript XSS
+The argument values are enclosed in paranthesis
+The function maps the database into a set of partitions.
